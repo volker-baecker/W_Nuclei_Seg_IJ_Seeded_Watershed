@@ -1,0 +1,14 @@
+LAP_RAD = 5;
+PROEMINENCE = 0.5;
+inputTitle = getTitle();
+inputID = getImageID();
+run("FeatureJ Laplacian", "compute smoothing="+LAP_RAD);
+run("Find Maxima...", "prominence="+PROEMINENCE+" light output=[Segmented Particles]");
+damsTitle = getTitle();
+selectImage(inputID);
+setAutoThreshold("Yen dark");
+run("Analyze Particles...", "size=50-Infinity show=Masks clear in_situ");
+imageCalculator("AND", inputTitle, damsTitle);
+run("Analyze Particles...", "size=50-Infinity show=[Count Masks] clear in_situ");
+run("3-3-2 RGB");
+close("\\Others");
