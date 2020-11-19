@@ -78,7 +78,7 @@
   "description": "Segment clustered nuclei using a laplacian filter, thresholding and a seeded watershed transform",
   "schema-version": "cytomine-0.1",
   "container-image": {
-    "image": "baecker/w_nuclei_seg_ij_seeded_watershed",
+    "image": "mricnrsfr/w_nuclei_seg_ij_seeded_watershed",
     "type": "singularity"
   }
 }
