@@ -4,12 +4,12 @@ from subprocess import call
 from cytomine.models import Job
 
 from biaflows import CLASS_OBJSEG
-from biaflows.helpers import NeubiasJob, prepare_data, upload_data, upload_metrics
+from biaflows.helpers import BiaflowsJob, prepare_data, upload_data, upload_metrics
 
 
 def main(argv):
     # 0. Initialize Cytomine client and job if necessary and parse inputs
-    with NeubiasJob.from_cli(argv) as nj:
+    with BiaflowsJob.from_cli(argv) as nj:
         nj.job.update(status=Job.RUNNING, progress=0, statusComment="Initialisation...")
 
         problem_cls = CLASS_OBJSEG
