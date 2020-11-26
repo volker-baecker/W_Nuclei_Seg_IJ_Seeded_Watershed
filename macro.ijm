@@ -49,6 +49,7 @@ function segmentNuclei(lapRad, proeminence) {
 	selectImage(inputID);
 	setAutoThreshold("Yen dark");
 	run("Analyze Particles...", "size=50-Infinity show=Masks clear in_situ");
+	run("Fill Holes");
 	imageCalculator("AND", inputTitle, damsTitle);
 	run("Analyze Particles...", "size=50-Infinity show=[Count Masks] clear in_situ");
 	run("3-3-2 RGB");
